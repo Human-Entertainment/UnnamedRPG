@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCA26DF325390089001F68B8 /* ControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA26DF225390089001F68B8 /* ControllerPublisher.swift */; };
+		FCA26DF425390089001F68B8 /* ControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA26DF225390089001F68B8 /* ControllerPublisher.swift */; };
 		FCEFACC52538EEBD0080D4D5 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFACC42538EEBD0080D4D5 /* Tests_iOS.swift */; };
 		FCEFACD02538EEBD0080D4D5 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFACCF2538EEBD0080D4D5 /* Tests_macOS.swift */; };
 		FCEFACD22538EEBD0080D4D5 /* Unnamed_RPGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFACA92538EEBB0080D4D5 /* Unnamed_RPGApp.swift */; };
@@ -15,6 +17,14 @@
 		FCEFACD52538EEBD0080D4D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFACAA2538EEBB0080D4D5 /* ContentView.swift */; };
 		FCEFACD62538EEBD0080D4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEFACAB2538EEBD0080D4D5 /* Assets.xcassets */; };
 		FCEFACD72538EEBD0080D4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEFACAB2538EEBD0080D4D5 /* Assets.xcassets */; };
+		FCEFAD1A2538F0A30080D4D5 /* ImagineEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEFACFB2538F0310080D4D5 /* ImagineEngine.framework */; };
+		FCEFAD1B2538F0A30080D4D5 /* ImagineEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCEFACFB2538F0310080D4D5 /* ImagineEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCEFAD202538F0B20080D4D5 /* ImagineEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEFACFF2538F0310080D4D5 /* ImagineEngine.framework */; };
+		FCEFAD212538F0B20080D4D5 /* ImagineEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCEFACFF2538F0310080D4D5 /* ImagineEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCEFAD2B2538F0CF0080D4D5 /* Unnamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFAD2A2538F0CF0080D4D5 /* Unnamed.swift */; };
+		FCEFAD312538F1D00080D4D5 /* ImagineEngine+SwiftUI+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFAD302538F1D00080D4D5 /* ImagineEngine+SwiftUI+iOS.swift */; };
+		FCEFAD362538F3A50080D4D5 /* Unnamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFAD2A2538F0CF0080D4D5 /* Unnamed.swift */; };
+		FCEFAD3D2538F3EE0080D4D5 /* ImagineEngine+SwiftUI+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFAD3C2538F3EE0080D4D5 /* ImagineEngine+SwiftUI+macOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +42,77 @@
 			remoteGlobalIDString = FCEFACB72538EEBD0080D4D5;
 			remoteInfo = "Unnamed RPG (macOS)";
 		};
+		FCEFACFA2538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D97C1BEFF229002C0205;
+			remoteInfo = "ImagineEngine-iOS";
+		};
+		FCEFACFC2538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D9861BEFF229002C0205;
+			remoteInfo = "ImagineEngine-iOS Tests";
+		};
+		FCEFACFE2538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD21B7361F92E75A0034A7CE;
+			remoteInfo = "ImagineEngine-macOS";
+		};
+		FCEFAD002538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 525688BA1F9CF33100F87786;
+			remoteInfo = "ImagineEngine-macOS Tests";
+		};
+		FCEFAD022538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5262A1BC1FA4CCF900DD5B3D;
+			remoteInfo = "ImagineEngine-tvOS";
+		};
+		FCEFAD042538F0310080D4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5262A1C81FA4CD1900DD5B3D;
+			remoteInfo = "ImagineEngine-tvOS Tests";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FCEFAD1C2538F0A30080D4D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FCEFAD1B2538F0A30080D4D5 /* ImagineEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCEFAD222538F0B20080D4D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FCEFAD212538F0B20080D4D5 /* ImagineEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FCA26DF225390089001F68B8 /* ControllerPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPublisher.swift; sourceTree = "<group>"; };
 		FCEFACA92538EEBB0080D4D5 /* Unnamed_RPGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unnamed_RPGApp.swift; sourceTree = "<group>"; };
 		FCEFACAA2538EEBB0080D4D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FCEFACAB2538EEBD0080D4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +127,10 @@
 		FCEFACCB2538EEBD0080D4D5 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEFACCF2538EEBD0080D4D5 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		FCEFACD12538EEBD0080D4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImagineEngine.xcodeproj; path = ../../ImagineEngine/ImagineEngine.xcodeproj; sourceTree = "<group>"; };
+		FCEFAD2A2538F0CF0080D4D5 /* Unnamed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unnamed.swift; sourceTree = "<group>"; };
+		FCEFAD302538F1D00080D4D5 /* ImagineEngine+SwiftUI+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagineEngine+SwiftUI+iOS.swift"; sourceTree = "<group>"; };
+		FCEFAD3C2538F3EE0080D4D5 /* ImagineEngine+SwiftUI+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagineEngine+SwiftUI+macOS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEFAD1A2538F0A30080D4D5 /* ImagineEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEFAD202538F0B20080D4D5 /* ImagineEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +167,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FCA26DEB25390074001F68B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCA26DF225390089001F68B8 /* ControllerPublisher.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FCEFACA32538EEBB0080D4D5 = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +184,15 @@
 				FCEFACC32538EEBD0080D4D5 /* Tests iOS */,
 				FCEFACCE2538EEBD0080D4D5 /* Tests macOS */,
 				FCEFACB12538EEBD0080D4D5 /* Products */,
+				FCEFACF02538F0220080D4D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		FCEFACA82538EEBB0080D4D5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FCA26DEB25390074001F68B8 /* Controller */,
+				FCEFAD252538F0BB0080D4D5 /* GameViews */,
 				FCEFACA92538EEBB0080D4D5 /* Unnamed_RPGApp.swift */,
 				FCEFACAA2538EEBB0080D4D5 /* ContentView.swift */,
 				FCEFACAB2538EEBD0080D4D5 /* Assets.xcassets */,
@@ -119,6 +214,7 @@
 		FCEFACB22538EEBD0080D4D5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FCEFAD302538F1D00080D4D5 /* ImagineEngine+SwiftUI+iOS.swift */,
 				FCEFACB32538EEBD0080D4D5 /* Info.plist */,
 			);
 			path = iOS;
@@ -127,6 +223,7 @@
 		FCEFACB92538EEBD0080D4D5 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				FCEFAD3C2538F3EE0080D4D5 /* ImagineEngine+SwiftUI+macOS.swift */,
 				FCEFACBA2538EEBD0080D4D5 /* Info.plist */,
 				FCEFACBB2538EEBD0080D4D5 /* macOS.entitlements */,
 			);
@@ -151,6 +248,35 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		FCEFACF02538F0220080D4D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCEFACF22538F0310080D4D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCEFACFB2538F0310080D4D5 /* ImagineEngine.framework */,
+				FCEFACFD2538F0310080D4D5 /* ImagineEngine-iOS Tests.xctest */,
+				FCEFACFF2538F0310080D4D5 /* ImagineEngine.framework */,
+				FCEFAD012538F0310080D4D5 /* ImagineEngine-macOS Tests.xctest */,
+				FCEFAD032538F0310080D4D5 /* ImagineEngine.framework */,
+				FCEFAD052538F0310080D4D5 /* ImagineEngine-tvOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCEFAD252538F0BB0080D4D5 /* GameViews */ = {
+			isa = PBXGroup;
+			children = (
+				FCEFAD2A2538F0CF0080D4D5 /* Unnamed.swift */,
+			);
+			path = GameViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +287,7 @@
 				FCEFACAC2538EEBD0080D4D5 /* Sources */,
 				FCEFACAD2538EEBD0080D4D5 /* Frameworks */,
 				FCEFACAE2538EEBD0080D4D5 /* Resources */,
+				FCEFAD1C2538F0A30080D4D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,6 +305,7 @@
 				FCEFACB42538EEBD0080D4D5 /* Sources */,
 				FCEFACB52538EEBD0080D4D5 /* Frameworks */,
 				FCEFACB62538EEBD0080D4D5 /* Resources */,
+				FCEFAD222538F0B20080D4D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +388,12 @@
 			mainGroup = FCEFACA32538EEBB0080D4D5;
 			productRefGroup = FCEFACB12538EEBD0080D4D5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FCEFACF22538F0310080D4D5 /* Products */;
+					ProjectRef = FCEFACF12538F0310080D4D5 /* ImagineEngine.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FCEFACAF2538EEBD0080D4D5 /* Unnamed RPG (iOS) */,
@@ -269,6 +403,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FCEFACFB2538F0310080D4D5 /* ImagineEngine.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImagineEngine.framework;
+			remoteRef = FCEFACFA2538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEFACFD2538F0310080D4D5 /* ImagineEngine-iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ImagineEngine-iOS Tests.xctest";
+			remoteRef = FCEFACFC2538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEFACFF2538F0310080D4D5 /* ImagineEngine.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImagineEngine.framework;
+			remoteRef = FCEFACFE2538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEFAD012538F0310080D4D5 /* ImagineEngine-macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ImagineEngine-macOS Tests.xctest";
+			remoteRef = FCEFAD002538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEFAD032538F0310080D4D5 /* ImagineEngine.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImagineEngine.framework;
+			remoteRef = FCEFAD022538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEFAD052538F0310080D4D5 /* ImagineEngine-tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ImagineEngine-tvOS Tests.xctest";
+			remoteRef = FCEFAD042538F0310080D4D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FCEFACAE2538EEBD0080D4D5 /* Resources */ = {
@@ -308,7 +487,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA26DF325390089001F68B8 /* ControllerPublisher.swift in Sources */,
+				FCEFAD312538F1D00080D4D5 /* ImagineEngine+SwiftUI+iOS.swift in Sources */,
 				FCEFACD42538EEBD0080D4D5 /* ContentView.swift in Sources */,
+				FCEFAD2B2538F0CF0080D4D5 /* Unnamed.swift in Sources */,
 				FCEFACD22538EEBD0080D4D5 /* Unnamed_RPGApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +499,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA26DF425390089001F68B8 /* ControllerPublisher.swift in Sources */,
+				FCEFAD3D2538F3EE0080D4D5 /* ImagineEngine+SwiftUI+macOS.swift in Sources */,
 				FCEFACD52538EEBD0080D4D5 /* ContentView.swift in Sources */,
+				FCEFAD362538F3A50080D4D5 /* Unnamed.swift in Sources */,
 				FCEFACD32538EEBD0080D4D5 /* Unnamed_RPGApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +703,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2D7T23VV7R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -542,6 +728,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2D7T23VV7R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

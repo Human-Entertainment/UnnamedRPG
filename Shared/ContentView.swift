@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var gamePad = ControllerPublisher()
+    @EnvironmentObject var gamePad: ControllerPublisher
     @State var color = Color.primary
     
     let scene = UnnamedScene(size: Size(width: 375, height: 667))
@@ -38,7 +38,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environmentObject(ControllerPublisher())
         }
-            
     }
 }

@@ -1,24 +1,48 @@
 import Combine
 import Foundation
 import GameController
+import OSLog
 
 enum DPadDirection {
     case none,up,down,left,right
 }
 
+private extension OSLog {
+    private static var subsystem = Bundle.main.bundleIdentifier!
+    
+    // MARK: Logger
+    static let controller = OSLog(subsystem: subsystem, category: "Controller")
+}
+
 class ControllerPublisher: ObservableObject {
     // MARK: The buttonpresses
     /// Wether or not the main button is pressed
-    @Published var mainButtonPressed: Bool = false
+    @Published
+    var mainButtonPressed: Bool = false
     /// Wether or not the attack button is pressed
-    @Published var secondaryButtonPressed: Bool = false
+    @Published
+    var secondaryButtonPressed: Bool = false
     /// The direction state of the dpad
-    @Published var direction: DPadDirection = .none
+    @Published
+    var direction: DPadDirection = .none
     
     // MARK: The combine properties
     private var cancels = [AnyCancellable]()
     
-    init(){
+    // MARK: React to button presses in a non-reactive way
+    private let onButtonA: (Bool) -> ()
+    private let onButtonB: (Bool) -> ()
+    private let onDpad: (DPadDirection) -> ()
+    
+    
+    
+    init(onButtonA: @escaping (Bool) -> () = {_ in},
+         onButtonB: @escaping (Bool) -> () = {_ in},
+         onDpad: @escaping (DPadDirection) -> () = {_ in} ){
+        self.onButtonA = onButtonA
+        self.onButtonB = onButtonB
+        self.onDpad = onDpad
+        
         cancels.append(
             NotificationCenter.default
                 .publisher(for: NSNotification.Name.GCControllerDidBecomeCurrent)
@@ -28,6 +52,10 @@ class ControllerPublisher: ObservableObject {
     }
     
     // MARK: - Setup controller
+    
+    private func reactToController(_ notification: Notification) {
+        (notification.object as? GCController).map(registerGamePad)
+    }
     
     /// Small convenience function to set up the dpad
     private func dpadRegistration(dpad: GCControllerDirectionPad) {
@@ -61,22 +89,23 @@ class ControllerPublisher: ObservableObject {
                 self.direction = .none
             }
         }
+        
+        self.onDpad(self.direction)
     }
     
     /// Registers controller and binds constrols of controller to parent object.
     /// - Parameter notification: Any notification, but notice if anything but a GCController gets passed in nothing will happen.
-    private func reactToController(_ notification: Notification) {
-        guard let gameController = (notification.object as? GCController) else { return }
-            
-        print("\(gameController.vendorName ?? "unknown") is connected")
+    private func registerGamePad(_ gameController: GCController) {
+        os_log(.info, log: .controller, "\(gameController.vendorName ?? "unknown") is connected")
         gameController.extendedGamepad
             .map { gamePad in
                 gamePad.buttonA.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in
-                    print("Pressed")
                     self.mainButtonPressed = pressed
+                    self.onButtonA(pressed)
                 }
                 gamePad.buttonB.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in
                     self.secondaryButtonPressed = pressed
+                    self.onButtonB(pressed)
                 }
                 
                 dpadRegistration(dpad: gamePad.dpad)
@@ -85,7 +114,6 @@ class ControllerPublisher: ObservableObject {
         gameController.microGamepad
             .map { gamePad in
                 gamePad.buttonA.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in
-                    print("Pressed")
                     self.mainButtonPressed = pressed
                 }
                 gamePad.buttonX.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in

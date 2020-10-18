@@ -12,6 +12,7 @@ struct Unnamed_RPGApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ControllerPublisher())
         }
     }
 }

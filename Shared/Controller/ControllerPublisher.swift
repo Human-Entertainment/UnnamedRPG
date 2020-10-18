@@ -29,20 +29,7 @@ class ControllerPublisher: ObservableObject {
     // MARK: The combine properties
     private var cancels = [AnyCancellable]()
     
-    // MARK: React to button presses in a non-reactive way
-    private let onButtonA: (Bool) -> ()
-    private let onButtonB: (Bool) -> ()
-    private let onDpad: (DPadDirection) -> ()
-    
-    
-    
-    init(onButtonA: @escaping (Bool) -> () = {_ in},
-         onButtonB: @escaping (Bool) -> () = {_ in},
-         onDpad: @escaping (DPadDirection) -> () = {_ in} ){
-        self.onButtonA = onButtonA
-        self.onButtonB = onButtonB
-        self.onDpad = onDpad
-        
+    init() {
         cancels.append(
             NotificationCenter.default
                 .publisher(for: NSNotification.Name.GCControllerDidBecomeCurrent)
@@ -89,8 +76,6 @@ class ControllerPublisher: ObservableObject {
                 self.direction = .none
             }
         }
-        
-        self.onDpad(self.direction)
     }
     
     /// Registers controller and binds constrols of controller to parent object.
@@ -101,11 +86,9 @@ class ControllerPublisher: ObservableObject {
             .map { gamePad in
                 gamePad.buttonA.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in
                     self.mainButtonPressed = pressed
-                    self.onButtonA(pressed)
                 }
                 gamePad.buttonB.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in
                     self.secondaryButtonPressed = pressed
-                    self.onButtonB(pressed)
                 }
                 
                 dpadRegistration(dpad: gamePad.dpad)

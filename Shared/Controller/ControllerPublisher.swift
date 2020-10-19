@@ -3,7 +3,17 @@ import Foundation
 import GameController
 import os
 
-enum DPadDirection {
+enum DPadDirection: CustomStringConvertible {
+    var description: String {
+        switch self {
+            case .none:  return "none"
+            case .up:    return "up"
+            case .down:  return "down"
+            case .left:  return "left"
+            case .right: return "right"
+        }
+    }
+    
     case none,up,down,left,right
 }
 

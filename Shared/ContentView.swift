@@ -9,19 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var gamePad: ControllerPublisher
-    @State var color = Color.primary
     
     let scene = UnnamedScene(size: Size(width: 375, height: 667))
     var body: some View {
-        VStack {
-            Text("Hello World \(color.description)")
-                .padding()
-            if gamePad.mainButtonPressed {
-                Text("Button A pressed")
-            }
-            Test(color: $color)
-            
-        }.background(color)
+        GameView(scene: scene)
         
     }
 }

@@ -1,17 +1,10 @@
 import Combine
 import Foundation
 import GameController
-import OSLog
+import os
 
 enum DPadDirection {
     case none,up,down,left,right
-}
-
-private extension OSLog {
-    private static var subsystem = Bundle.main.bundleIdentifier!
-    
-    // MARK: Logger
-    static let controller = OSLog(subsystem: subsystem, category: "Controller")
 }
 
 class ControllerPublisher: ObservableObject {
@@ -28,6 +21,9 @@ class ControllerPublisher: ObservableObject {
     
     // MARK: The combine properties
     private var cancels = [AnyCancellable]()
+    
+    // MARK: Logger
+    private var logger = Logger(subsystem: "app.inuk.controller", category: "Controller")
     
     init() {
         cancels.append(
@@ -81,7 +77,7 @@ class ControllerPublisher: ObservableObject {
     /// Registers controller and binds constrols of controller to parent object.
     /// - Parameter notification: Any notification, but notice if anything but a GCController gets passed in nothing will happen.
     private func registerGamePad(_ gameController: GCController) {
-        os_log(.info, log: .controller, "\(gameController.vendorName ?? "unknown") is connected")
+        logger.info("\(gameController.vendorName ?? "unknown") is connected")
         gameController.extendedGamepad
             .map { gamePad in
                 gamePad.buttonA.valueChangedHandler = {(_ button: GCControllerButtonInput, _ value: Float, _ pressed: Bool) in

@@ -8,20 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var gamePad: ControllerPublisher
+    @EnvironmentObject
+    var scene: UnnamedScene
     
-    let scene = UnnamedScene(size: Size(width: 375, height: 667))
     var body: some View {
         GameView(scene: scene)
         
-    }
-}
-
-struct Test: View {
-    @Binding var color: Color
-    
-    var body: some View {
-        Text("\(color.description)")
     }
 }
 

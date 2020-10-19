@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct Unnamed_RPGApp: App {
+    let controller = ControllerPublisher()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ControllerPublisher())
+                .environmentObject(controller)
+                .environmentObject(UnnamedScene(gamePad: controller, size: Size(width: 375, height: 667)))
         }
     }
 }

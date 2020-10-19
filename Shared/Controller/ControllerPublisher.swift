@@ -4,6 +4,8 @@ import GameController
 import os
 
 enum DPadDirection: CustomStringConvertible {
+    case none,up,down,left,right
+
     var description: String {
         switch self {
             case .none:  return "none"
@@ -13,8 +15,6 @@ enum DPadDirection: CustomStringConvertible {
             case .right: return "right"
         }
     }
-    
-    case none,up,down,left,right
 }
 
 class ControllerPublisher: ObservableObject {
